@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact - GoldenGlow Events</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+color:white;
+font-family:'Poppins',sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+
+background:linear-gradient(90deg,#C9A227,#F2D16B,#C9A227);
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+
+box-shadow:0 2px 12px rgba(0,0,0,0.25);
+backdrop-filter: blur(6px);
+}
+
+.logo{
+font-family:'Cinzel',serif;
+font-size:22px;
+color:black;
+font-weight:600;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+}
+
+.nav-links li{
+margin-left:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:black;
+font-weight:500;
+font-size:15px;
+}
+.logo img{
+height:45px;
+width:auto;
+}
+.nav-links a{
+transition:0.3s;
+}
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:black;
+}
+
+
+/* HERO */
+
+.contact-hero{
+padding:120px 20px 50px;
+text-align:center;
+}
+
+.contact-hero h1{
+font-family:'Cinzel',serif;
+font-size:50px;
+color:#D4AF37;
+}
+
+.contact-hero p{
+margin-top:10px;
+color:#ccc;
+}
+
+
+/* CONTACT SECTION */
+
+.contact-section{
+padding:60px;
+background:#111;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+}
+
+
+/* CONTACT INFO */
+
+.contact-info h3{
+color:#D4AF37;
+margin-bottom:15px;
+}
+
+.contact-info p{
+margin-bottom:10px;
+color:#ccc;
+}
+
+
+/* CONTACT FORM */
+
+.contact-form{
+background:#000;
+padding:30px;
+border:1px solid #D4AF37;
+border-radius:8px;
+}
+
+.contact-form h3{
+color:#D4AF37;
+margin-bottom:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border:none;
+outline:none;
+border-radius:4px;
+}
+
+.contact-form button{
+padding:12px 25px;
+background:#D4AF37;
+border:none;
+border-radius:25px;
+font-weight:600;
+cursor:pointer;
+}
+
+
+/* WHATSAPP BUTTON */
+
+.whatsapp-btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 28px;
+background:#D4AF37;
+color:black;
+text-decoration:none;
+border-radius:25px;
+font-weight:600;
+}
+
+
+/* FOOTER */
+
+.footer{
+background:#111;
+padding:60px 40px 20px;
+color:#ccc;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+.footer h3,
+.footer h4{
+color:#D4AF37;
+margin-bottom:15px;
+}
+
+.footer ul{
+list-style:none;
+}
+
+.footer ul li{
+margin-bottom:10px;
+}
+
+.footer ul li a{
+text-decoration:none;
+color:#ccc;
+}
+
+.footer ul li a:hover{
+color:#D4AF37;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+border-top:1px solid #333;
+padding-top:15px;
+font-size:14px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+.navbar{
+padding:15px 20px;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#000;
+flex-direction:column;
+align-items:center;
+
+max-height:0;
+overflow:hidden;
+transition:max-height 0.35s ease;
+}
+
+.nav-links li{
+margin:15px 0;
+}
+
+.nav-links a{
+color:white;
+}
+
+.nav-links.active{
+display:flex;
+max-height:400px;
+}
+
+/* HERO */
+
+.contact-hero h1{
+font-size:34px;
+}
+
+/* CONTACT GRID */
+
+.contact-section{
+grid-template-columns:1fr;
+padding:40px 20px;
+text-align:center;
+}
+
+/* FOOTER */
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="images/logo/logo.png" alt="GoldenGlow Logo">
+</div>
+<div class="menu-toggle" id="menu-toggle">
+☰
+</div>
+
+<ul class="nav-links" id="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+<section class="contact-hero">
+
+<h1>Contact Us</h1>
+
+<p>Get in touch with GoldenGlow Events to plan your celebration</p>
+
+</section>
+
+
+<section class="contact-section">
+
+
+<div class="contact-info">
+
+<h3>Contact Information</h3>
+
+<p>Phone: 9353996954</p>
+<p>Phone: 9113935344</p>
+<p>Phone: 7975157411</p>
+
+<a href="https://wa.me/919113935344" class="whatsapp-btn">
+Chat on WhatsApp
+</a>
+
+</div>
+
+
+<div class="contact-form">
+
+<h3>Send via WhatsApp</h3>
+
+<form id="contactform">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+
+</section>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div>
+<h3>GoldenGlow Events</h3>
+<p>Professional decoration services for birthdays, surprise celebrations and baby showers.</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>9353996954</p>
+<p>9113935344</p>
+<p>7975157411</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 GoldenGlow Events. All Rights Reserved.</p>
+</div>
+
+</footer>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

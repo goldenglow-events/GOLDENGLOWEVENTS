@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About - GoldenGlow Events</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+color:white;
+font-family:'Poppins',sans-serif;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+
+background:linear-gradient(90deg,#C9A227,#F2D16B,#C9A227);
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+
+box-shadow:0 2px 12px rgba(0,0,0,0.25);
+backdrop-filter: blur(6px);
+}
+
+.logo{
+font-family:'Cinzel',serif;
+font-size:22px;
+color:black;
+font-weight:600;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+}
+
+.nav-links li{
+margin-left:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:black;
+font-weight:500;
+font-size:15px;
+}
+
+.logo img{
+height:45px;
+width:auto;
+}
+.nav-links a{
+transition:0.3s;
+}
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:black;
+}
+
+
+/* HERO */
+
+.about-hero{
+padding:120px 20px 60px;
+text-align:center;
+}
+
+.about-hero h1{
+font-family:'Cinzel',serif;
+font-size:50px;
+color:#D4AF37;
+}
+
+.about-hero p{
+color:#ccc;
+margin-top:10px;
+}
+
+
+/* ABOUT SECTION */
+
+.about-section{
+padding:60px;
+background:#111;
+display:grid;
+grid-template-columns: 1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about-text h2{
+color:#D4AF37;
+margin-bottom:15px;
+}
+
+.about-text p{
+line-height:1.6;
+color:#ccc;
+}
+.about-image{
+   text-align: center;
+}
+
+.about-image img{
+width:100%;
+max-width:400px;
+border-radius:8px;
+display:block;
+margin:auto;
+}
+
+/* WHY CHOOSE US */
+
+.why-section{
+padding:60px;
+background:#000;
+text-align:center;
+}
+
+.why-section h2{
+color:#D4AF37;
+font-family:'Cinzel',serif;
+margin-bottom:40px;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.why-card{
+border:1px solid #D4AF37;
+padding:25px;
+border-radius:8px;
+background:#111;
+}
+
+
+/* CTA */
+
+.cta-section{
+padding:80px 20px;
+text-align:center;
+background:#111;
+}
+
+.cta-title{
+font-family:'Cinzel',serif;
+font-size:35px;
+color:#D4AF37;
+}
+
+.cta-text{
+margin-top:10px;
+color:#ccc;
+}
+
+.cta-button{
+display:inline-block;
+margin-top:20px;
+padding:12px 28px;
+background:#D4AF37;
+color:black;
+text-decoration:none;
+border-radius:25px;
+font-weight:600;
+}
+
+
+/* FOOTER */
+
+.footer{
+background:#000;
+padding:60px 40px 20px;
+color:#ccc;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+.footer h3,
+.footer h4{
+color:#D4AF37;
+margin-bottom:15px;
+}
+
+.footer ul{
+list-style:none;
+}
+
+.footer ul li{
+margin-bottom:10px;
+}
+
+.footer ul li a{
+text-decoration:none;
+color:#ccc;
+}
+
+.footer ul li a:hover{
+color:#D4AF37;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+border-top:1px solid #333;
+padding-top:15px;
+font-size:14px;
+}
+
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+.navbar{
+padding:15px 20px;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#000;
+flex-direction:column;
+align-items:center;
+
+max-height:0;
+overflow:hidden;
+transition:max-height 0.35s ease;
+}
+
+.nav-links li{
+margin:15px 0;
+}
+
+.nav-links a{
+color:white;
+}
+
+.nav-links.active{
+display:flex;
+max-height:400px;
+}
+
+/* HERO */
+
+.about-hero h1{
+font-size:34px;
+}
+
+/* ABOUT SECTION */
+
+.about-section{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.about-image img{
+max-width:300px;
+margin-top:20px;
+}
+
+/* WHY GRID */
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
+/* FOOTER */
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="images/logo/logo.png" alt="GoldenGlow Logo">
+</div>
+<div class="menu-toggle" id="menu-toggle">
+☰
+</div>
+
+<ul class="nav-links" id="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+<section class="about-hero">
+
+<h1>About GoldenGlow Events</h1>
+
+<p>Creating beautiful decorations and unforgettable celebrations</p>
+
+</section>
+
+
+<section class="about-section">
+
+<div class="about-text">
+
+<h2>Who We Are</h2>
+
+<p>
+GoldenGlow Events is a professional event decoration team dedicated to
+creating beautiful and memorable celebrations. We specialize in birthday
+decorations, surprise setups, baby showers, bride-to-be celebrations,
+and many other special occasions.
+</p>
+
+<p>
+Our mission is to transform ordinary spaces into stunning celebration
+environments with creative decoration ideas and elegant designs.
+</p>
+
+</div>
+
+
+<div class="about-image">
+
+<img src="images/gallery/g1.jpg" alt="Event Decoration">
+
+</div>
+
+</section>
+
+
+<section class="why-section">
+
+<h2>Why Choose GoldenGlow Events</h2>
+
+<div class="why-grid">
+
+<div class="why-card">
+<h3>Creative Designs</h3>
+<p>Unique and elegant decoration ideas for every celebration.</p>
+</div>
+
+<div class="why-card">
+<h3>Professional Setup</h3>
+<p>Experienced team delivering high quality event decoration.</p>
+</div>
+
+<div class="why-card">
+<h3>Affordable Packages</h3>
+<p>Beautiful decorations at reasonable prices.</p>
+</div>
+
+<div class="why-card">
+<h3>Customer Satisfaction</h3>
+<p>We focus on making every celebration memorable.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cta-section">
+
+<h2 class="cta-title">Plan Your Celebration With Us</h2>
+
+<p class="cta-text">
+Contact GoldenGlow Events today and make your special moments unforgettable.
+</p>
+
+<a href="https://wa.me/919113935344" class="cta-button">
+Chat on WhatsApp
+</a>
+
+</section>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div>
+<h3>GoldenGlow Events</h3>
+<p>Professional decoration services for birthdays, surprise celebrations and baby showers.</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>9353996954</p>
+<p>9113935344</p>
+<p>7975157411</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 GoldenGlow Events. All Rights Reserved.</p>
+</div>
+
+</footer>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

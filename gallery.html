@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery - GoldenGlow Events</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+color:white;
+font-family:'Poppins',sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+
+background:linear-gradient(90deg,#C9A227,#F2D16B,#C9A227);
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+
+box-shadow:0 2px 12px rgba(0,0,0,0.25);
+backdrop-filter: blur(6px);
+}
+
+.logo{
+font-family:'Cinzel',serif;
+font-size:22px;
+color:black;
+font-weight:600;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+}
+
+.nav-links li{
+margin-left:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:black;
+font-weight:500;
+font-size:15px;
+}
+.logo img{
+height:45px;
+width:auto;
+}
+.nav-links a{
+transition:0.3s;
+}
+/* HAMBURGER */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:black;
+}
+
+
+/* HERO */
+
+.gallery-hero{
+padding:120px 20px 60px;
+text-align:center;
+}
+
+.gallery-hero h1{
+font-family:'Cinzel',serif;
+font-size:50px;
+color:#D4AF37;
+}
+
+.gallery-hero p{
+color:#ccc;
+margin-top:10px;
+}
+
+
+/* GALLERY GRID */
+
+.gallery-section{
+padding:60px;
+background:#111;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery-grid img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:8px;
+transition:0.3s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+box-shadow:0 0 12px #D4AF37;
+}
+
+.gallery-grid img{
+transition:0.3s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+box-shadow:0 0 12px #D4AF37;
+}
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+.lightbox.active{
+display:flex;
+}
+.prev,
+.next{
+position:absolute;
+top:50%;
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:10px;
+user-select:none;
+}
+
+.prev{
+left:30px;
+}
+
+.next{
+right:30px;
+}
+
+.prev:hover,
+.next:hover{
+color:#D4AF37;
+transform:scale(1.2);
+}
+
+
+/* CTA */
+
+.cta-section{
+padding:80px 20px;
+text-align:center;
+background:#000;
+}
+
+.cta-title{
+font-family:'Cinzel',serif;
+font-size:35px;
+color:#D4AF37;
+}
+
+.cta-text{
+margin-top:10px;
+color:#ccc;
+}
+
+.cta-button{
+display:inline-block;
+margin-top:20px;
+padding:12px 28px;
+background:#D4AF37;
+color:black;
+text-decoration:none;
+border-radius:25px;
+font-weight:600;
+transition:0.3s;
+}
+
+.cta-button:hover{
+background:#f2d16b;
+box-shadow:0 0 10px #D4AF37;
+}
+
+
+/* FOOTER */
+
+.footer{
+background:#111;
+padding:60px 40px 20px;
+color:#ccc;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+.footer h3,
+.footer h4{
+color:#D4AF37;
+margin-bottom:15px;
+}
+
+.footer ul{
+list-style:none;
+}
+
+.footer ul li{
+margin-bottom:10px;
+}
+
+.footer ul li a{
+text-decoration:none;
+color:#ccc;
+}
+
+.footer ul li a:hover{
+color:#D4AF37;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+border-top:1px solid #333;
+padding-top:15px;
+font-size:14px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+.navbar{
+padding:15px 20px;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#000;
+flex-direction:column;
+align-items:center;
+
+max-height:0;
+overflow:hidden;
+transition:max-height 0.35s ease;
+}
+.nav-links li{
+margin:15px 0;
+}
+
+.nav-links a{
+color:white;
+}
+
+.nav-links.active{
+display:flex;
+max-height:400px;
+}
+
+/* HERO */
+
+.gallery-hero h1{
+font-size:34px;
+}
+
+/* GALLERY GRID */
+
+.gallery-section{
+padding:40px 20px;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+/* FOOTER */
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="images/logo/logo.png" alt="GoldenGlow Logo">
+</div>
+
+<div class="menu-toggle" id="menu-toggle">
+☰
+</div>
+
+<ul class="nav-links" id="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+<section class="gallery-hero">
+
+<h1>Our Decorations</h1>
+
+<p>A glimpse of the beautiful celebrations created by GoldenGlow Events</p>
+
+</section>
+
+
+<section class="gallery-section">
+
+<div class="gallery-grid">
+
+<img src="images/gallery/g1.jpg" class="gallery-img">
+<img src="images/gallery/g2.jpg" class="gallery-img">
+<img src="images/gallery/g3.jpg" class="gallery-img">
+<img src="images/gallery/g4.jpg" class="gallery-img">
+<img src="images/gallery/g5.jpg" class="gallery-img">
+<img src="images/gallery/g6.jpg" class="gallery-img">
+<img src="images/gallery/g7.jpg" class="gallery-img">
+<img src="images/gallery/g8.jpg" class="gallery-img">
+
+</div>
+
+</section>
+
+
+<section class="cta-section">
+
+<h2 class="cta-title">Loved Our Decorations?</h2>
+
+<p class="cta-text">
+Book your decoration today with GoldenGlow Events.
+</p>
+
+<a href="https://wa.me/919113935344" class="cta-button">
+Chat on WhatsApp
+</a>
+
+</section>
+
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div>
+<h3>GoldenGlow Events</h3>
+<p>Professional decoration services for birthdays, surprise celebrations and baby showers.</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>9353996954</p>
+<p>9113935344</p>
+<p>7975157411</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 GoldenGlow Events. All Rights Reserved.</p>
+</div>
+
+</footer>
+<div class="lightbox" id="lightbox">
+
+<span class="prev">&#10094;</span>
+
+<img id="lightbox-img">
+
+<span class="next">&#10095;</span>
+
+</div>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
