@@ -18,7 +18,7 @@ const name = document.getElementById("name").value;
 const email = document.getElementById("email").value;
 const message = document.getElementById("message").value;
 
-const phone = "919353996954";
+const phone = "919113935344";
 
 const whatsappMessage =
 `Hello GoldenGlow Events,%0A
@@ -139,4 +139,5 @@ ScrollReveal().reveal('.about-image', {
     distance: '60px',
     duration: 1200,
     origin: 'right'
+
 });
